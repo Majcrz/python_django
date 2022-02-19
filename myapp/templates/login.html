@@ -1,13 +1,21 @@
+{% load static %}
 <html>
     <head>
+        <style>
+            body{
+                background-color:rgb(78, 82, 34);
+                text-align: center;
+            }
+        </style>
         <title>login</title>
+        <link rel="stylesheet" href="{% static 'css\style.css' %}">
     </head>
     <body>
-        LOgin
+       <h1 style="color:red; text-align:center;" >LOGIN</h1><br><br><br>
         <form>
-            username:<input type="text" name="username" placeholder="type here">
-            password:<input type="password" name="password" placeholder="type password"><br>
-            <input type="submit" name="submit">
+            <p style="color:rgb(30, 255, 0);" >Username:</p><input type="text" name="username" placeholder="type here"><br>
+            <p style="color:rgb(30, 255, 0);" >Password:</p><input type="password" name="password" placeholder="type password"><br><br>
+            <input type="button" name="submit" value="Sign in">
         </form>
     </body>
-</html>
+</html>    
