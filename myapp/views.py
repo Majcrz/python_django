@@ -14,4 +14,8 @@ def login(request):
 def home(request):
 
     return render(request,'home.html')    
+
+def login1(request):
+
+    return render(request,'login1.html')    
         
