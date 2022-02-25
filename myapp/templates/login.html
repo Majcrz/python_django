@@ -61,17 +61,46 @@
                     document.write('<br>')
                 }
             }
+            function validate()
+            {
+               value= document.getElementById("username").value
+               value1= document.getElementById("password").value
+               if(value==""){
+                   alert("nothing in it")
+
+               }
+               document.getElementById("validate1").innerHTML="hello iam here"
+
+
+            }
 
         </script>
         <script src="{% static 'js/home.js' %}"></script>
         <title>Login</title>
         <link rel="stylesheet" href="{% static 'css\style.css' %}">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+        <script type="text/javascript" language="javascript">
+            $(document).ready(function(){
+                $("p").css("background-color","cyan");
+                $("#button1").click(function(){
+                    console.log("dfgfd")
+                    $(this).hide();
+                });
+            });
+        </script>
     </head>
     <body>
+        <p>
+            helloooooo 
+        </p>
        <h1 id="login" text-align:center; >LOGIN</h1><br><br><br>
         <form>
-            <p style="color:rgb(10, 13, 236)" >Username:</p><input type="text" name="username" placeholder="type here"><br>
-            <p style="color:rgb(20, 5, 223);" >Password:</p><input type="password" name="password" placeholder="type password"><br><br>
+            <p id="validate1">
+
+            </p>
+            <p style="color:rgb(10, 13, 236)" >Username:</p><input type="text" id="username" name="username" placeholder="type here"><br>
+            <p style="color:rgb(20, 5, 223);" >Password:</p><input type="password" id="password" name="password" placeholder="type password"><br><br>
+            <button type="button" name="clear" value="clear" onclick="validate()">valiadte</button>
             <button type="button" name="clear" value="clear" onclick="funalert()">clear</button>
             <button type="button" name="clear" value="clear" onclick="check()">Check</button>
             <button type="button" class="btn btn-reset" >Reset</button>
@@ -94,7 +123,7 @@
                     </div>
                         
 
-
+                    <button type="button" id ="button1" name="clear" value="clear" >button11</button>
 
     </body>
 </html>    

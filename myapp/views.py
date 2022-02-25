@@ -18,4 +18,8 @@ def home(request):
 def login1(request):
 
     return render(request,'login1.html')    
+
+def sign(request):
+
+    return render(request,'sign_up.html')    
         
