@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import user
 
@@ -48,5 +48,27 @@ def signup(request):
         datamain.save()
         return render(request,'signup.html')  
     else:
-        return render(request,'signup.html')         
+        return render(request,'signup.html')   
+
+
+def login2(request):
+    if request.method == "POST":  
+        username1=request.POST['username2']
+        password1=request.POST['password2']  
+        try:
+            userdetails= user.objects.get(username=username1,password=password1)
+            request.session['userid']=data.id
+            return redirect('/home')
+        except user.DoesNotExist:
+                return render(request, "login2.html",{'status':'Login failed'})
+    else:
+        return render(request, "login2.html")   
+
+def viewUsers(request):
+    userdata2= user.objects.all()
+    return render(request,'viewUsers.html',{"userdata2": userdata2})
+    
+
+
+
         

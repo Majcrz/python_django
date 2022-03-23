@@ -10,5 +10,6 @@ urlpatterns = [
     path('sign',views.sign,name='sign'),
     path('hello',views.hello,name='hello'),
     path('signup',views.signup,name='signup'),
+    path('login2',views.login2,name='login2'),
 ]
 
